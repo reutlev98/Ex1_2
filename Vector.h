@@ -11,5 +11,5 @@ class Vector {
     Vector(std::string str);
 
      std::vector<float> makeFloatVector (std::string str);
-    
+
 };

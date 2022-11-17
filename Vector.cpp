@@ -5,12 +5,12 @@ class Vector {
     private:
         std::vector<float> vec;
     public:
-    Vector(){ };
-    Vector(std::string str){ 
+    Vector::Vector(){ };
+    Vector::Vector(std::string str){ 
         this->vec = makeFloatVector(str);
     };
 
-     std::vector<float> makeFloatVector (std::string str){
+     std::vector<float> Vector::makeFloatVector (std::string str){
         std::stringstream  sstrim(str);
 
         std::string newStr;
