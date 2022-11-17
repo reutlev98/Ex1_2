@@ -6,7 +6,7 @@
         this->vec = makeFloatVector(str);
     };
 
-    std::vector<float> Vector::makeFloatVector (std::string str){ //this function get string of input and convert it to float veector
+    std::vector<float> Vector::makeFloatVector (std::string str){ 
         std::stringstream  sstrim(str);
 
         std::string newStr;
