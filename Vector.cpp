@@ -1,26 +1,24 @@
-#include <vector>
-#include <string>
-#include <sstream>
-#include <iostream>
+
+#include "Vector.h"
 
 class Vector {
     private:
         std::vector<float> vec;
     public:
     Vector(){ };
-    Vector(string str){ 
-        this.vec = makeFloatVector(str);
+    Vector(std::string str){ 
+        this->vec = makeFloatVector(str);
     };
 
-     std::vector<float> makeFloatVector (string str){
+     std::vector<float> makeFloatVector (std::string str){
         std::stringstream  sstrim(str);
 
         std::string newStr;
         while(std::getline(sstrim,newStr,' '))
         {
-            this.vec.push_back(stof(newStr)); 
+            this->vec.push_back(stof(newStr)); 
         }
-        return this.vec;
+        return this->vec;
     }
     
-}
+};
