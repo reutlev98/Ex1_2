@@ -3,7 +3,7 @@
 #include "math.h"
 #include "stdio.h"
 
-    Vector::Vector(){ }; 
+    Vector::Vector(){}; 
     Vector::Vector(std::string str){ 
         this->vec = makeFloatVector(str);
     };
@@ -11,6 +11,10 @@
      std::vector<double> Vector::getVec(){
         return this->vec;
      }
+
+    void Vector::setVec(std::vector<double> v){
+        this->vec = v;
+    }
 
     std::vector<double> Vector::makeFloatVector (std::string str){ 
         std::stringstream  sstrim(str);
@@ -34,18 +38,17 @@
         }
     }
 
-    double Vector::absValDist(Vector v2){ //assuming v1&v2 from the same size 
+    double Vector::absValDist(Vector v2, double p){ //assuming v1&v2 from the same size 
         double sum = 0;
         std::vector vec_v2 = v2.getVec();
         std::vector<double>::iterator itr_v2 = vec_v2.begin();
         for (std::vector<double>::iterator itr_v1 = vec.begin(); itr_v1 != vec.end(); itr_v1++)
         {
-            std::cout << "itr_1 point to: "<< *itr_v1 << " " << "itr_2 points to: "<< *itr_v2 << std:: endl;
-            sum += pow((*itr_v1 - *itr_v2),2);
+            sum += pow(abs(*itr_v1 - *itr_v2),p);
             itr_v2++;
-            std::cout<< "current sum (p-q)^2 " <<sum<<std::endl;
         }
-        return sqrt(sum);
+        double ans = pow(sum,(1/p));
+        return ans;
     }
 
     double Vector::norm(){
@@ -55,4 +58,20 @@
          }
          return sqrt(sum);
     }
+
+
+     Vector Vector::absValSubtract(Vector v2){
+        Vector subtract;
+        std::vector vec_v2 = v2.getVec();
+        std::vector vec_subtract = subtract.getVec();
+        std::vector<double>::iterator itr_v2 = vec_v2.begin();
+        std::vector<double>::iterator itr_substract = vec_subtract.begin();
+         for (std::vector<double>::iterator itr_v1 = vec.begin(); itr_v1 != vec.end(); itr_v1++){
+             vec_subtract.push_back(abs(*itr_v1 - *itr_v2));
+             *itr_v2++;
+             *itr_substract++;
+         }
+         subtract.setVec(vec_subtract);
+         return subtract;
+     }
    
