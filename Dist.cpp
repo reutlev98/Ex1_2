@@ -9,13 +9,7 @@ return v1.Vector::absValDist(v2,2);
 };
 
 double Dist::manhattanDistance(Vector v1, Vector v2){
-    double sum = 0;
-    Vector substract = v1.absValSubtract(v2);
-    std::vector<double> subVec = substract.getVec();
-    for(std::vector<double>::iterator i = subVec.begin(); i!=subVec.end(); i++){
-           sum += *i;
-        }
-    return sum;
+   return v1.absValDist(v2,1);
 }
 
 double Dist::ChebyshevDistance(Vector v1, Vector v2){
