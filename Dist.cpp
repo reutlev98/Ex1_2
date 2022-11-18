@@ -31,7 +31,7 @@ double Dist::CanberraDistance(Vector v1, Vector v2){
     std::vector<double> v2Vec = v2.getVec();
     std::vector<double>::iterator itr_v2 = v2Vec.begin();
     Vector sub = v1.absValSubtract(v2);
-    std::vector subVec = sub.getVec();
+    std::vector<double> subVec = sub.getVec();
     for(std::vector<double>::iterator i = subVec.begin(); i!=subVec.end(); i++){
        sum += (*i) / (abs(*itr_v1) + abs(*itr_v2));
     }

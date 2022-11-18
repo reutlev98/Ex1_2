@@ -40,7 +40,7 @@
 
     double Vector::absValDist(Vector v2, double p){ //assuming v1&v2 from the same size 
         double sum = 0;
-        std::vector vec_v2 = v2.getVec();
+        std::vector<double> vec_v2 = v2.getVec();
         std::vector<double>::iterator itr_v2 = vec_v2.begin();
         for (std::vector<double>::iterator itr_v1 = vec.begin(); itr_v1 != vec.end(); itr_v1++)
         {
@@ -62,8 +62,8 @@
 
      Vector Vector::absValSubtract(Vector v2){
         Vector subtract;
-        std::vector vec_v2 = v2.getVec();
-        std::vector vec_subtract = subtract.getVec();
+        std::vector<double> vec_v2 = v2.getVec();
+        std::vector<double> vec_subtract = subtract.getVec();
         std::vector<double>::iterator itr_v2 = vec_v2.begin();
         std::vector<double>::iterator itr_substract = vec_subtract.begin();
          for (std::vector<double>::iterator itr_v1 = vec.begin(); itr_v1 != vec.end(); itr_v1++){
