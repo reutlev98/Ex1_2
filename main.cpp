@@ -1,8 +1,7 @@
+#include "Dist.h"
 
-#include "Vector.h"
 
 int main(){
-    int x = 0;
     std::string str1;
     std::cout << "please enter str1: "<< std::endl;
     std::getline(std::cin,str1);
@@ -18,6 +17,6 @@ int main(){
 
     v1.print();
     v2.print();
-
-   std::cout << v1.absValDist(v2);
+    Dist dis;
+    std::cout << dis.euclideanDistance(v1,v2);
 }

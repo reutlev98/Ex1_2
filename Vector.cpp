@@ -47,3 +47,12 @@
         }
         return sqrt(sum);
     }
+
+    double Vector::norm(){
+        int sum = 0; 
+         for(std::vector<double>::iterator i = vec.begin(); i!=vec.end(); i++){
+         sum += pow(*i,2);
+         }
+         return sqrt(sum);
+    }
+   
