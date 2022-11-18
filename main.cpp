@@ -2,7 +2,9 @@
 #include "Vector.h"
 
 int main(){
+    int x = 0;
     std::string str1;
+    std::cout << "please enter str1: "<< std::endl;
     std::getline(std::cin,str1);
     std::cout<<str1<<std::endl;
 
@@ -17,5 +19,5 @@ int main(){
     v1.print();
     v2.print();
 
-
+   std::cout << v1.absValDist(v2);
 }
