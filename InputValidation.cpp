@@ -1,5 +1,7 @@
 #include "InputValidation.h"
-#include "stdio.h"
+#include <cctype>
+#include <cstring>
+
 
 InputValidation::InputValidation(){};
 
@@ -40,5 +42,11 @@ void InputValidation::vectorSize(Vector v1, Vector v2){
     }
  }
 
- void InputValidation::isNumber(std::string str){
+ void InputValidation::isNumber(std::string str){ 
+    for (int i = 0; i < str.length(); i++)  {
+        // check if str[i] is a digit
+        if (!isdigit(str[i]) && str[i]!=' '){
+            setValid(false);
+        }
+    }
  }

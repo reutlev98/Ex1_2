@@ -1,18 +1,17 @@
 
-#include "GetInput.h"
+#include "GetOutput.h"
 
 
 int main(){
+
     
-    GetInput in;
+    GetInput in;//input validation
     in.input();
-    /*
-    Dist dis;
-    std::cout <<"euclidian distance: " << dis.euclideanDistance(v1,v2) << std::endl;
-    v1.absValSubtract(v2).print();
-    std::cout <<"manhatan distance: " << dis.manhattanDistance(v1,v2) << std::endl;
-    std::cout <<"chebishev distance: " << dis.ChebyshevDistance(v1,v2) << std::endl;
-    std::cout <<"converra distance: " << dis.CanberraDistance(v1,v2) << std::endl;
-    std::cout <<"mikovski distance: " << dis.MinkowskiDistance(v1,v2) << std::endl;
-    */
+    
+    Vector v1=in.getV1();// Distance calculation
+    Vector v2=in.getV2();
+
+    GetOutput output; // print distances
+    output.printDist(v1,v2);
+
 }
