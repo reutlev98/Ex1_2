@@ -16,7 +16,7 @@ first two designs optimized our code by maintaining the main class simple and cl
 these last two optimizations prevented code duplication.
 
 ## How to use
-for running on university server, use the command *g++ -std=c++11 *.cpp* for getting a.out file and run this file (*./a.out*)
+for running on university server, use the command *g++ -std=c++11 *.cpp* for getting a.out file and run this file * (./a.out) *
 
 
 
