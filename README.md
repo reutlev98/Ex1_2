@@ -9,9 +9,10 @@ for calculating minkovski distance we chose constant p = 2;
 ## Optimization
 - created dedicated class ('GetOutput') for printing all distances with the desired floating point.
 - created dedicated class ('GetInput') for input receiving treatment. 
-these first two designs optimized our code by maintaining the main class simple and clean.
 -function method of calculating the absolute value of the difference between vectors.
 -minkovski calculation function who gets different p values as a input in order to be able to calculate manhattan and euclidean formulas as well.
+
+first two designs optimized our code by maintaining the main class simple and clean.
 these last two optimizations prevented code duplication.
 
 ## How to use
