@@ -16,6 +16,7 @@ these last two optimizations preventd code duplication.
 
 ## How to use
 > "!!!!!!!!!!!!to add intructions to compile on planet/u2"
+for running on university server, use the command  *$g++ -std=c++11 *.cpp* for getting a.out file and run this file (*./a.out*)
 
 
 
