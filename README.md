@@ -19,5 +19,6 @@ for running on university server and getting a.out file, use the command:
 ### g++ -std=c++11 *.cpp
 run **(./a.out)**
 
+![example](https://photos.app.goo.gl/GHXHiZ8dkZKsBnKR7)
 
 
