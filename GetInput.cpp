@@ -11,40 +11,30 @@ Vector GetInput::getV2(){
 }
 
 void GetInput::input(){
-
     do {
         try{
-            check.setValid(true);
+            check.setValid(true); //re-define the flag as true-valid
             std::string str1;
-            std::cout << "please enter str1: "<< std::endl;
-            std::getline(std::cin,str1);
-            std::cout<<str1<<std::endl;
-
-            std::cout<<"please enter str2:"<<std::endl;
+            std::getline(std::cin,str1); //get str1 as a sentence (with " ")
             std::string str2;
-            std::getline(std::cin,str2);
-            std::cout<<str2<<std::endl;
-
-            check.isNumber(str1);
+            std::getline(std::cin,str2);//get str2 as a sentence (with " ")
+            check.isNumber(str1); //check input is digit
             check.isNumber(str2);
-            if (check.getValid()){ 
+
+            if (check.getValid()){ //if input is digit insert to vector and continue validation
                Vector vec1(str1);
-               v1= vec1;
+               v1= vec1; //intialize v1 memeber
                Vector vec2(str2);
-               v2= vec2;
-
-                v1.print();
-                v2.print();
-
-            check.vectorSize(v1,v2);
-            check.zeroDivision(v1,v2);
-            check.isEmpty(v1,v2);
+               v2= vec2; //intialize v2 member
+               check.vectorSize(v1,v2); //check vector from equal size
+               check.zeroDivision(v1,v2); //check no 0 in same position
+               check.isEmpty(v1,v2); //check vectors aren't empty
             }  
         }
-        catch(...){
+        catch(...){ //if input inserted in a bad way, evoking input-error -> catch and inform check
             check.setValid(false);
         }
     }
-    while (!check.getValid());
+    while (!check.getValid()); //if the user inserted invalid input - ask him to insert again
   
 }

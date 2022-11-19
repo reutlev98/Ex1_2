@@ -4,32 +4,33 @@
 #include "stdio.h"
 
     Vector::Vector(){}; 
-    Vector::Vector(std::string str){ 
-        this->vec = makeFloatVector(str);
+    Vector::Vector(std::string str){ //initiate the vector with double values converted from the input string
+        vec = makeDoubleVector(str); 
     };
 
      std::vector<double> Vector::getVec(){
-        return this->vec;
+        return vec;
      }
 
     void Vector::setVec(std::vector<double> v){
-        this->vec = v;
+       vec = v;
     }
 
-    std::vector<double> Vector::makeFloatVector (std::string str){ 
-        std::stringstream  sstrim(str);
-
-        std::string newStr;
+    std::vector<double> Vector::makeDoubleVector (std::string str){ //push to vector the double values converted from string input
+        std::stringstream sstrim(str); //streaming the input
+        std::string newStr; //new string to contain each word from the input string which be converted to double
         while(std::getline(sstrim,newStr,' '))
         {
-            this->vec.push_back(stod(newStr)); 
+            vec.push_back(stod(newStr));  //going throught the input and divide it to words by " ", convert to double and push to vector.
         }
-        return this->vec;
+        return vec; // end of string -> return intiate vector.
     }
+
+
     void Vector::print(){
-        if (!vec.empty()){
+        if (!vec.empty()){ //if the vector is not intialized - return error
             for(std::vector<double>::iterator i = vec.begin();i!=vec.end();i++){
-                std::cout<<"print:"<<*i;
+                std::cout<<"print:"<<*i; //print vector values
             }
             std::cout<<std::endl;
         }
@@ -38,40 +39,19 @@
         }
     }
 
-    double Vector::absValDist(Vector v2, double p){ //assuming v1&v2 from the same size 
-        double sum = 0;
-        std::vector<double> vec_v2 = v2.getVec();
-        std::vector<double>::iterator itr_v2 = vec_v2.begin();
-        for (std::vector<double>::iterator itr_v1 = vec.begin(); itr_v1 != vec.end(); itr_v1++)
-        {
-            sum += pow(abs(*itr_v1 - *itr_v2),p);
-            itr_v2++;
-        }
-        double ans = pow(sum,(1/p));
-        return ans;
-    }
 
-    double Vector::norm(){
-        int sum = 0; 
-         for(std::vector<double>::iterator i = vec.begin(); i!=vec.end(); i++){
-         sum += pow(*i,2);
-         }
-         return sqrt(sum);
-    }
-
-
-     Vector Vector::absValSubtract(Vector v2){
-        Vector subtract;
+     Vector Vector::absValSubtract(Vector v2){ //this function return a |substract| vector of this(p1) and p2. 
+        Vector subtract; 
         std::vector<double> vec_v2 = v2.getVec();
         std::vector<double> vec_subtract = subtract.getVec();
         std::vector<double>::iterator itr_v2 = vec_v2.begin();
-        std::vector<double>::iterator itr_substract = vec_subtract.begin();
+        std::vector<double>::iterator itr_substract = vec_subtract.begin(); //taking begin_itertaor of subtract and v2
          for (std::vector<double>::iterator itr_v1 = vec.begin(); itr_v1 != vec.end(); itr_v1++){
-             vec_subtract.push_back(abs(*itr_v1 - *itr_v2));
-             *itr_v2++;
+             vec_subtract.push_back(abs(*itr_v1 - *itr_v2)); 
+             *itr_v2++; //increament
              *itr_substract++;
          }
-         subtract.setVec(vec_subtract);
+         subtract.setVec(vec_subtract); //update the subtract vector member by its setter
          return subtract;
      }
    

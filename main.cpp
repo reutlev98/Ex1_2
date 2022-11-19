@@ -3,7 +3,6 @@
 
 
 int main(){
-
     
     GetInput in;//input validation
     in.input();
