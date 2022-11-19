@@ -3,7 +3,7 @@
 ## Description
 the purpose of the program in this milestone is to calculate different distance formulas between Vectors.
 we have created vector class ('Vector') and class ('Dist') who performs distance calculations over two vector objects.
-the user is ask to insert equal number of values for both vector so we created ('InputValidation') class to enforce it. 
+the user is ask to insert equal number of values for both vectors so we created ('InputValidation') class to enforce it. 
 for calculating minkovski distance we chose constant p = 2;
 
 ## Optimization
