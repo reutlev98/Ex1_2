@@ -4,6 +4,12 @@
 the purpose of the program in this milestone is to calculate different distance formulas between Vectors.
 we have created vector class ('Vector') and class ('Dist') who performs distance calculations over two vector objects.
 the user is ask to insert equal number of values for both vectors so we created ('InputValidation') class to enforce it. 
+The requsted input format is numbers separated with space (" ") for each vector, and the program output is 5 distances caculation results between the two Vectors, for example:
+![image](https://user-images.githubusercontent.com/118124478/203364075-de62b59b-ed04-400a-b6df-ae94ecf8a4c2.png)
+
+(adding one space (" ") after the last index in the Vector is optional).
+
+
 for calculating minkovski distance we chose constant p = 2;
 
 ## Optimization
